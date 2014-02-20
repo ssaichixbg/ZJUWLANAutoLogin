@@ -1,0 +1,18 @@
+{
+    "name": "ZJUWLAN 自动登录",
+    "version": "0.1",
+    "description": "利用ZJUWLAN登录页自带的保存功能实现自动登录，插件不会保存您的登录信息。简单，快捷，安全！",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches":["https://net.zju.edu.cn/srun_port1.php*"],
+            "js": ["jquery.js","YZzjuwlan.js"],
+ 			      "run_at": "document_end"
+        },
+        {
+            "matches":["https://net.zju.edu.cn/user_logout.html*"],
+            "js": ["jquery.js","YZzjuwlanlogin.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
